@@ -1,0 +1,59 @@
+estudos_dirigidos:
+  externo_id: 0000
+  tipo_categoria_da_disciplina: directed_studies
+  ativo: true
+
+normal:
+  externo_id: 1
+  tipo_categoria_da_disciplina: normal
+  ativo: true
+
+oficina:
+  externo_id: 0000
+  tipo_categoria_da_disciplina: workshop
+  ativo: true
+
+orientacao:
+  externo_id: 0000
+  tipo_categoria_da_disciplina: guidance
+  ativo: true
+
+proficiencia:
+  externo_id: 0000
+  tipo_categoria_da_disciplina: proficiency
+  ativo: true
+
+qualificacao:
+  externo_id: 0000
+  tipo_categoria_da_disciplina: qualification
+  ativo: true
+
+seminario:
+  externo_id: 0000
+  tipo_categoria_da_disciplina: seminary
+  ativo: true
+
+tcc:
+  externo_id: 8
+  tipo_categoria_da_disciplina: final_paper
+  ativo: true
+
+atividade_programada:
+  externo_id: 0000
+  tipo_categoria_da_disciplina: scheduled_activity
+  ativo: true
+
+atividades_de_extensao:
+  externo_id: nivelamento
+  tipo_categoria_da_disciplina: extension_activities
+  ativo: true
+
+defesa:
+  externo_id: 0000
+  tipo_categoria_da_disciplina: defense
+  ativo: true
+
+estagio:
+  externo_id: internship
+  tipo_categoria_da_disciplina: internship
+  ativo: true

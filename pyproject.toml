@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "exorciza-cli"
+requires-python = ">=3.12"
+license = "MIT"
+description = "CLI para automação, tratamento e integração de dados acadêmicos."
+version = "0.1.0"
+dependencies = [
+    "annotated-doc==0.0.5",
+    "annotated-types==0.8.0",
+    "colorama==0.4.6",
+    "defusedxml==0.7.1",
+    "et_xmlfile==2.0.0",
+    "markdown-it-py==4.2.0",
+    "mdurl==0.1.2",
+    "numpy==2.5.4",
+    "odfpy==1.4.1",
+    "openpyxl==3.1.5",
+    "pandas==3.1.0",
+    "pydantic==2.14.2",
+    "pydantic_core==2.50.2",
+    "Pygments==2.21.0",
+    "python-calamine==0.9.0",
+    "python-dateutil==4.0.0",
+    "pyxlsb==1.0.10",
+    "PyYAML==6.0.3",
+    "rich==15.0.0",
+    "shellingham==1.5.4",
+    "typer==0.27.3",
+    "typing-inspection==0.4.4",
+    "typing_extensions==4.16.0",
+    "tzdata==2026.6",
+    "xlrd==2.0.2",
+    "xlsxwriter==3.3.1"
+]
+
+[project.scripts]
+exorciza = "src.main:app"
+
+[tool.setuptools.packages.find]
+where = ["./"]

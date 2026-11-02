@@ -1,0 +1,11 @@
+pos-graduacao:
+  externo_id: 2
+  tipo_nivel_de_ensino: graduate
+
+graduacao:
+  externo_id: 1
+  tipo_nivel_de_ensino: undergraduate
+
+curso_de_extensao:
+  externo_id: 3
+  tipo_nivel_de_ensino: extension_course

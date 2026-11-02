@@ -1,0 +1,11 @@
+presencial:
+  externalId: 5
+  teachingModalityTypeId: face_to_face
+
+hibrido:
+  externalId: 6
+  teachingModalityTypeId: blended_learning
+
+ensino_a_distancia:
+  externalId: 4
+  teachingModalityTypeId: distance_learning

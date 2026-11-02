@@ -1,0 +1,19 @@
+deficiencia_visual:
+  nome: DV
+  externo_id: screen-reader
+
+deficiencia_auditiva:
+  nome: DA
+  externo_id: specific-needs
+
+deficiencia_motora:
+  nome: DM
+  externo_id: specific-needs
+
+deficiencia_intelectual:
+  nome: DI
+  externo_id: specific-needs
+
+outros:
+  nome: outros
+  externo_id: specific-needs
