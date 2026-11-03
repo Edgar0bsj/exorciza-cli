@@ -47,7 +47,11 @@ Instale as dependências e o projeto:
 ```bash
 pip install -r requirements.txt
 
+# Em modo Dev
 pip install -e .
+
+# Ou forma Definitiva
+pip install .
 ```
 
 Após a instalação, o comando `exorciza` estará disponível no terminal.

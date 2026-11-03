@@ -1,19 +1,19 @@
 deficiencia_visual:
-  nome: DV
-  externo_id: screen-reader
+  externo_id: def_visual
+  tipo: visual
 
 deficiencia_auditiva:
-  nome: DA
-  externo_id: specific-needs
-
-deficiencia_motora:
-  nome: DM
-  externo_id: specific-needs
+  externo_id: def_auditiva
+  tipo: auditory
 
 deficiencia_intelectual:
-  nome: DI
-  externo_id: specific-needs
+  externo_id: def_intelectual
+  tipo: intellectual
+
+deficiencia_fisica:
+  externo_id: def_fisica
+  tipo: physical
 
 outros:
-  nome: outros
-  externo_id: specific-needs
+  externo_id: def_outros
+  tipo: others
