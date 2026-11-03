@@ -4,6 +4,9 @@ import typer
 from pydantic import ValidationError
 
 from src.contexts.ava_manager.acessibilidades.controller import AcessibilidadeController
+from src.contexts.ava_manager.modalidades_de_ensino.controller import (
+    ModalidadesDeEnsinoController,
+)
 from src.err.exception_errs import ExtractionYmlError
 from src.util import logger
 
@@ -11,6 +14,7 @@ app = typer.Typer()
 
 
 acessibilidade_contr = AcessibilidadeController()
+mod_ensino_contr = ModalidadesDeEnsinoController()
 
 
 def ava_manager(
@@ -31,21 +35,34 @@ def ava_manager(
     """
     try:
         # Acessibilidades
-        logger.aviso("Iniciando Acessibilidade")
+        logger.aviso("> Iniciando Acessibilidade")
         acessibilidades_df = acessibilidade_contr.make_acess()
 
         # Modalidades de ensino
-        # (EM DESENVOLVIMENTO)
+        logger.aviso("> Iniciando Modalidade de Ensino")
+        modalidades_de_ensino_df = mod_ensino_contr.make_mod()
 
         dir = Path("ava-manager")
         dir.mkdir(parents=True, exist_ok=True)
 
+        # ACESSIBILIDADE EXPORT
+        logger.aviso("Exportando Acessibilidade")
         acessibilidades_df.to_csv(
             dir / "accessibility.unig_producao.csv",
             sep=";",
             encoding="utf-8",
             index=False,
         )
+
+        # MODALIDADE DE ENSINO EXPORT
+        logger.aviso("Exportando Modalidade de Ensino")
+        modalidades_de_ensino_df.to_csv(
+            dir / "teaching-modality.unig_producao.csv",
+            sep=";",
+            encoding="utf-8",
+            index=False,
+        )
+        logger.sucesso("Exorcismo Feito com Sucesso !")
 
     except ValidationError as err:
         msg = {}
