@@ -7,6 +7,9 @@ from src.contexts.ava_manager.acessibilidades.controller import AcessibilidadeCo
 from src.contexts.ava_manager.modalidades_de_ensino.controller import (
     ModalidadesDeEnsinoController,
 )
+from src.contexts.ava_manager.niveis_de_ensino.controller import (
+    NiveisDeEnsinoController,
+)
 from src.err.exception_errs import ExtractionYmlError
 from src.util import logger
 
@@ -15,6 +18,7 @@ app = typer.Typer()
 
 acessibilidade_contr = AcessibilidadeController()
 mod_ensino_contr = ModalidadesDeEnsinoController()
+nivel_ensino_contr = NiveisDeEnsinoController()
 
 
 def ava_manager(
@@ -42,6 +46,10 @@ def ava_manager(
         logger.aviso("> Iniciando Modalidade de Ensino")
         modalidades_de_ensino_df = mod_ensino_contr.make_mod()
 
+        # Nivel de Ensino
+        logger.aviso("> Iniciando Nivel de Ensino")
+        nivel_de_ensino_df = nivel_ensino_contr.make_nlv_ensino()
+
         dir = Path("ava-manager")
         dir.mkdir(parents=True, exist_ok=True)
 
@@ -62,6 +70,16 @@ def ava_manager(
             encoding="utf-8",
             index=False,
         )
+
+        # NIVEL DE ENSINO EXPORT
+        logger.aviso("Exportando Nivel de Ensino")
+        nivel_de_ensino_df.to_csv(
+            dir / "education-level.unig_producao.csv",
+            sep=";",
+            encoding="utf-8",
+            index=False,
+        )
+
         logger.sucesso("Exorcismo Feito com Sucesso !")
 
     except ValidationError as err:
